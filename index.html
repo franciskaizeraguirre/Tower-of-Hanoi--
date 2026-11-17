@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f1e8">
+  <title>Tower of Hanoi — A little brain break</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <div class="topline">
+      <span class="topline-brand"><span class="topline-mark" aria-hidden="true">✦</span> A little brain break</span>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <span id="theme-icon" aria-hidden="true">☾</span>
+        <span id="theme-label">Dark mode</span>
+      </button>
+    </div>
+    <section class="game-card" aria-labelledby="game-title">
+      <header>
+        <div>
+          <h1 id="game-title">Tower of Hanoi</h1>
+          <p class="subtitle">Move the whole stack. One small disk at a time.</p>
+        </div>
+        <label class="difficulty" for="disk-count">
+          <span>Difficulty</span>
+          <select id="disk-count" aria-label="Choose number of disks">
+            <option value="3">Easy · 3 disks</option>
+            <option value="4" selected>Classic · 4 disks</option>
+            <option value="5">Tricky · 5 disks</option>
+            <option value="6">Brainy · 6 disks</option>
+            <option value="7">Expert · 7 disks</option>
+            <option value="8">Master · 8 disks</option>
+          </select>
+        </label>
+      </header>
+
+      <div class="stats" aria-label="Game statistics">
+        <div class="stat"><span class="stat-label">Moves</span><span class="stat-value" id="moves">0</span></div>
+        <div class="stat"><span class="stat-label">Best possible</span><span class="stat-value" id="minimum">15</span></div>
+        <div class="stat"><span class="stat-label">Time</span><span class="stat-value" id="timer">00:00</span></div>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" id="board" aria-label="Tower of Hanoi game board"></div>
+      </div>
+      <p class="message" id="message" role="status" aria-live="polite">Choose a tower to pick up its top disk.</p>
+      <div class="controls">
+        <button class="control-button" id="undo" type="button" disabled><span aria-hidden="true">↶</span> Undo</button>
+        <button class="control-button primary" id="new-game" type="button"><span aria-hidden="true">↻</span> New game</button>
+      </div>
+      <div class="instructions">
+        <span aria-hidden="true">☝</span>
+        <span><strong>How to play:</strong> Tap a tower, then tap another. Never place a larger disk on a smaller one. You can also drag and drop.</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
